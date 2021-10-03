@@ -110,7 +110,8 @@ Embed the robot screenshot to the receipt PDF file
 *** Keywords ***
 Create a ZIP file of the receipts
     Archive Folder With ZIP   ${OUTPUT_DIRECTORY}   ${OUTPUT_DIRECTORY}${/}tasks.zip   recursive=True  include=*.pdf  exclude=/.*
-
+    Remove Files    ${OUTPUT_DIRECTORY}${/}*.pdf
+    Remove Files    ${OUTPUT_DIRECTORY}${/}*.png
 
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc
